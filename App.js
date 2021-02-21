@@ -19,3 +19,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+// URL Gitlab
+// https://gitlab.tadsufpr.net.br
+
+// token
+// /oauth/token
+
+// payload do token:
+/**
+ * {
+ *  grant_type: 'password',
+ *  username: 'user@example.com'
+ *  password: 'password'
+ * }
+ */
