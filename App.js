@@ -1,5 +1,3 @@
-// In App.js in a new project
-
 import * as React from 'react';
 import { View, Text, Button, Image, ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -14,21 +12,6 @@ import {
   Comfortaa_600SemiBold,
   Comfortaa_700Bold,
 } from '@expo-google-fonts/comfortaa';
-
-
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text
-        style={{
-          fontFamily: 'Comfortaa_600SemiBold',
-        }}
-      >Home Screen</Text>
-      <Button title="Vai para test" onPress={() => navigation.navigate('Test')} />
-    </View>
-  );
-}
 
 function TestScreen({ navigation }) {
   return (

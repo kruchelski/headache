@@ -3,7 +3,7 @@ import { View, Text, ImageBackground } from 'react-native';
 import { bgLogin } from '../../assets';
 import styles from './styles'
 
-const HomeScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
   return (
     <View style={ styles.container }>
       <ImageBackground
@@ -14,11 +14,11 @@ const HomeScreen = ({ navigation }) => {
         <Text
           style={ styles.text }
         >
-          Home Screen
+          Login Screen
       </Text>
       </ImageBackground>
     </View>
   );
 }
 
-export default HomeScreen;
+export default LoginScreen;
