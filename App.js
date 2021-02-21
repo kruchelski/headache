@@ -1,14 +1,30 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image, ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { bgUnwrap } from './src/assets';
+import {
+  useFonts,
+  Comfortaa_300Light,
+  Comfortaa_400Regular,
+  Comfortaa_500Medium,
+  Comfortaa_600SemiBold,
+  Comfortaa_700Bold,
+} from '@expo-google-fonts/comfortaa';
+
+
 
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+      <Text
+        style={{
+          fontFamily: 'Comfortaa_600SemiBold',
+        }}
+      >Home Screen</Text>
       <Button title="Vai para test" onPress={() => navigation.navigate('Test')} />
     </View>
   );
@@ -17,20 +33,44 @@ function HomeScreen({ navigation }) {
 function TestScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Test Screen</Text>
-      <Button title="Vai para home" onPress={() => navigation.navigate('Home')} />
+      <ImageBackground
+        resizeMode='cover'
+        source={ bgUnwrap }
+        style={{ flex: 1, justifyContent: 'center', width: '100%', height: '100%' }}
+      >
+        <Text>Test Screen</Text>
+        <Button title="Vai para home" onPress={() => navigation.navigate('Home')} />
+      </ImageBackground>
     </View>
   );
 }
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 function App() {
+  let [fontsLoaded] = useFonts({
+    Comfortaa_300Light,
+    Comfortaa_400Regular,
+    Comfortaa_500Medium,
+    Comfortaa_600SemiBold,
+    Comfortaa_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return (
+      <View>
+        <Text>
+          Carregando
+        </Text>
+      </View>
+    );
+  } 
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={ HomeScreen } />
-        <Stack.Screen name="Test" component={ TestScreen } />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Test" component={TestScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
