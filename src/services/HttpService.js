@@ -35,10 +35,11 @@ export const makeRequest = async (endpoint, requestBody = null, params = null) =
     return await client(url, body, headers);
   } catch (err) {
 
-    throw new Error(
-      `[${err?.response?.status || 'Sem Status'}] ${err?.response?.data ||
-      `Erro inesperado na request ${endpoint}`}`
-    );
+    const status = err?.response?.status || 'Outro Status';
+    const msg = err?.response?.data || err?.error || err?.message ||
+      `Unexpected request error - ${endpoint}`;
+
+    throw new Error(`[${status}] ${msg}`);
   }
 }
 
