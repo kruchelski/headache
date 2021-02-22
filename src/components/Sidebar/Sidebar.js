@@ -8,7 +8,7 @@ const Sidebar = ({ navigation }) => {
       <Text
         style={styles.text}
       >
-        Login Screen
+        Sidebar Content
       </Text>
     </View>
   );

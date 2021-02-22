@@ -7,7 +7,7 @@ import { Sidebar } from '../components';
 const MainStack = createStackNavigator();
 const MainDrawer = createDrawerNavigator();
 
-export default () => {
+const mainStack = () => {
 	return (
 		<MainStack.Navigator>
 			<MainStack.Screen
@@ -18,6 +18,24 @@ export default () => {
 				name={'RepoScreen'}
 				component={RepoScreen}
 			/>
+			<MainStack.Screen
+				name={'UnwrapScreen'}
+				component={UnwrapScreen}
+			/>
 		</MainStack.Navigator>
+
+	)
+}
+
+export default () => {
+	return (
+		<MainDrawer.Navigator
+			drawerContent={Sidebar}
+		>
+			<MainDrawer.Screen
+				name={'Main'}
+				component={mainStack}
+			/>
+		</MainDrawer.Navigator>
 	);
 }

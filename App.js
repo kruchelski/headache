@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { View, Text, Button, Image, ImageBackground } from 'react-native';
+import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { bgUnwrap } from './src/assets';
+import Navigators from './src/navigators';
 import {
   useFonts,
   Comfortaa_300Light,
@@ -12,24 +10,6 @@ import {
   Comfortaa_600SemiBold,
   Comfortaa_700Bold,
 } from '@expo-google-fonts/comfortaa';
-
-function TestScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <ImageBackground
-        resizeMode='cover'
-        source={ bgUnwrap }
-        style={{ flex: 1, justifyContent: 'center', width: '100%', height: '100%' }}
-      >
-        <Text>Test Screen</Text>
-        <Button title="Vai para home" onPress={() => navigation.navigate('Home')} />
-      </ImageBackground>
-    </View>
-  );
-}
-
-const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
 
 function App() {
   let [fontsLoaded] = useFonts({
@@ -51,10 +31,7 @@ function App() {
   } 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Test" component={TestScreen} />
-      </Stack.Navigator>
+      <Navigators />
     </NavigationContainer>
   );
 }
