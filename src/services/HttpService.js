@@ -1,7 +1,11 @@
 import { gitlab } from '../configs';
 import { ENDPOINTS } from '../constants';
 
-export const makeRequest = async (endpoint, requestBody = null, params = null) => {
+export const makeRequest = async (
+  endpoint, 
+  requestBody = null, 
+  params = null, 
+  query = null) => {
 
   try {
 
@@ -29,6 +33,25 @@ export const makeRequest = async (endpoint, requestBody = null, params = null) =
     let body = null;
     if (requestInfo.body) {
       body = requestBody;
+    }
+
+    // Sets query params
+    if (requestInfo.query) {
+      let i = 0;
+      const numberOfKeys = Object.keys(requestInfo.query).length;
+      for (const key in requestInfo.query) {
+        if ((query[key] !== null && query[key] !== undefined) || 
+        (requestInfo.query[key] !== null)) {
+          if (i === 0) {
+            url = `${url}?`;
+          }
+          if (i !== 0) {
+            url = `${url}&`;
+          }
+          url = `${url}${key}=${query[key] || requestInfo.query[key]}`;
+        }
+        i++;
+      }
     }
 
     // Makes the request
