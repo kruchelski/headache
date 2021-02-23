@@ -35,6 +35,7 @@ const LoginScreen = ({ navigation }) => {
             autoCapitalize='none'
             autoCorrect={false}
             onChangeText={(text) => setUsername(text)}
+            style={{ backgroundColor: 'purple' }}
           />
           <Input 
             placeholder='Password'
