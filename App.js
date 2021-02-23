@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigators from './src/navigators';
+import { AuthProvider } from './src/contexts';
 import {
   useFonts,
   Comfortaa_300Light,
@@ -28,10 +29,12 @@ function App() {
         </Text>
       </View>
     );
-  } 
+  }
   return (
     <NavigationContainer>
-      <Navigators />
+      <AuthProvider>
+        <Navigators />
+      </AuthProvider>
     </NavigationContainer>
   );
 }

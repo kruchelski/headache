@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const gitlab = axios.create({
-    baseURL: 'http://192.168.18.36:3002',
+    baseURL: 'https://gitlab.tadsufpr.net.br',
 });
 
 export const setDefaultHeaders = (header, value) => {

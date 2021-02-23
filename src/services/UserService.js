@@ -51,7 +51,7 @@ export const getAccessTokenFromServer = async (username, password) => {
 
 export const getUserInfoFromServer = async (username) => {
 	const userInfoResponse = await HttpService.makeRequest(
-		'getUserInfo', null, null, { active: true, username }
+		'getUserInfo', null, null, null
 	)
 
 	// If the response is missing some data then set as error

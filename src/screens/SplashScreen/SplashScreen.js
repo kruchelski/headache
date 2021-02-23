@@ -1,27 +1,29 @@
 import React, { useEffect } from 'react';
 import { Image, Text, View, ActivityIndicator } from 'react-native';
+import { useAuth } from '../../hooks';
 import styles from './styles';
 
 const SplashScreen = ({ setLoadingApp }) => {
 
 	const welcomeMessage = 'Welcome to the unwrap of your GitLab'
+	const { loadStorageData, authErrorHandler } = useAuth();
 
 	useEffect(() => {
     let timeout = null;
 		const autoSignInWithStoredToken = async () => {
-			// try {
-				// await loadStorageData();
-			// } catch (err) {
+			try {
+				await loadStorageData();
+			} catch (err) {
 			
-				// errorHandler(
-					// err, 
-					// 'An unexpected error happened whilte trying to authenticate with stored token'
-				// )
-			// } finally {
+				authErrorHandler(
+					err, 
+					'An unexpected error happened whilte trying to authenticate with stored token'
+				)
+			} finally {
 				timeout = setTimeout(() => {
 					setLoadingApp(false);
-				}, 3500);
-			// }
+				}, 2500);
+			}
 		}
 
 		autoSignInWithStoredToken();

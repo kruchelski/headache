@@ -1,3 +1,5 @@
+const apiPrefix = '/api/v4';
+
 export const ENDPOINTS = {
 
   login: {
@@ -12,14 +14,11 @@ export const ENDPOINTS = {
   },
 
   getUserInfo: {
-    url: '/users',
+    url: `${apiPrefix}/user`,
     method: 'get',
     body: null,
     params: null,
-    query: {
-      active: true,
-      username: null
-    },
+    query: null,
     headers: null
   }
 }

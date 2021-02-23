@@ -13,7 +13,7 @@ export const makeRequest = async (
     const requestInfo = ENDPOINTS[endpoint];
 
     // Gets the client for the request
-    const client = _getRequestFunction[requestInfo.type];
+    const client = _getRequestFunction[requestInfo.method];
 
     // Gets the URL
     let url = requestInfo.url;
@@ -57,7 +57,7 @@ export const makeRequest = async (
     // Makes the request
     return await client(url, body, headers);
   } catch (err) {
-
+    
     const status = err?.response?.status || 'Outro Status';
     const msg = err?.response?.data || err?.error || err?.message ||
       `Unexpected request error - ${endpoint}`;
