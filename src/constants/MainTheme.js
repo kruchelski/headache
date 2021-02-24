@@ -9,11 +9,11 @@ export const mainTheme = {
   bgColor1: '#FAFAFA',
   bgColor2: '#F5F5F5',
   bgColor3: '#F0F0F0',
-  fgColor0: '#333333',
+  fgColor0: '#141414',
   fgColor1: '#444444',
   fgColor2: '#666666',
   fgColor3: '#888888',
   colorLight: '#EEEEEE',
   colorDark: '#333333',
-  danger: '#b0361a',
+  danger: '#f5362a',
 }

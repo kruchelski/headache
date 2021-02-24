@@ -28,21 +28,29 @@ const customStyle = {
   solid: {
     primary: {
       backgroundColor: mainTheme.primary,
-      color: mainTheme.colorLight
+      color: mainTheme.colorLight,
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize:16
     },
     secondary: {
       backgroundColor: mainTheme.secondary,
-      color: mainTheme.colorLight
+      color: mainTheme.colorLight,
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize:16
     }
   },
   outline: {
     primary: {
       borderColor: mainTheme.primary,
-      color: mainTheme.primary
+      color: mainTheme.primary,
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize:16
     },
     secondary: {
       borderColor: mainTheme.secondary,
-      color: mainTheme.secondary
+      color: mainTheme.secondary,
+      fontFamily: 'Comfortaa_400Regular',
+      fontSize:16
     }
   },
   icon: {

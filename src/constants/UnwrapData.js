@@ -56,11 +56,21 @@ const unwrapData = {
         id: 1,
         msg: `Last activity: ?`,
         icon: 'calendar'
+      },
+      {
+        id: 2,
+        msg: `? stars`,
+        icon:'star-face'
+      },
+      {
+        id: 3,
+        msg: `Description: ?`,
+        icon: 'text'
       }
     ],
     final: {
       0: `This is a cool name!`,
-      1: `Looks like it has some activity`,
+      1: `Looks like it has some activity recently`,
       2: `This could have a better name and more activity`
     },
     button: 'Next',
@@ -114,19 +124,19 @@ const unwrapData = {
     content: [
       {
         id: 0,
-        msg: `Title: ?`,
+        msg: `Commit message: ?`,
         icon: 'source-commit'
       },
       {
         id: 1,
-        msg: `Date ?`,
+        msg: `Commit date: ?`,
         icon: 'calendar'
       }
     ],
     final: {
       0: `That's a good commit message`,
       1: `Wow, such commit`,
-      2: `This message is probably wrong`
+      2: `This commit message is probably wrong`
     },
     button: 'Next',
     nextStep: 'step6',

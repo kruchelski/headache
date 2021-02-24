@@ -4,40 +4,43 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { HomeScreen, UnwrapScreen, RepoScreen } from '../screens';
 import { Sidebar } from '../components';
 import { mainTheme } from '../constants';
+import { DataProvider } from '../contexts';
 
 const MainStack = createStackNavigator();
 const MainDrawer = createDrawerNavigator();
 
 const mainStack = () => {
 	return (
-		<MainStack.Navigator
-			screenOptions={{
-				headerTintColor: mainTheme.colorLight,
-				headerStyle: {
-					backgroundColor: mainTheme.fgColor0,
-				},
-				headerTitleStyle: {
-					fontFamily: 'Comfortaa_600SemiBold',
-					fontSize: 16
-				}
-			}}
-		>
-			<MainStack.Screen
-				name={'HomeScreen'}
-				component={HomeScreen}
-				options={{ title: 'Headache' }}
-			/>
-			<MainStack.Screen
-				name={'RepoScreen'}
-				component={RepoScreen}
-				options={{ title: 'Projects' }}
-			/>
-			<MainStack.Screen
-				name={'UnwrapScreen'}
-				component={UnwrapScreen}
-				options={{ title: 'Unwrap' }}
-			/>
-		</MainStack.Navigator>
+		<DataProvider>
+			<MainStack.Navigator
+				screenOptions={{
+					headerTintColor: mainTheme.colorLight,
+					headerStyle: {
+						backgroundColor: mainTheme.fgColor0,
+					},
+					headerTitleStyle: {
+						fontFamily: 'Comfortaa_600SemiBold',
+						fontSize: 16
+					}
+				}}
+			>
+				<MainStack.Screen
+					name={'HomeScreen'}
+					component={HomeScreen}
+					options={{ title: 'Headache' }}
+				/>
+				<MainStack.Screen
+					name={'RepoScreen'}
+					component={RepoScreen}
+					options={{ title: 'Projects' }}
+				/>
+				<MainStack.Screen
+					name={'UnwrapScreen'}
+					component={UnwrapScreen}
+					options={{ title: 'Unwrap' }}
+				/>
+			</MainStack.Navigator>
+		</DataProvider>
 
 	)
 }

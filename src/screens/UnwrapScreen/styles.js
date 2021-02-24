@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     top: 0,
-    opacity: 0.5,
+    opacity: 0.6,
     backgroundColor: 'black',
     width: windowWidth,
     height: windowHeight
@@ -89,6 +89,17 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  error: {
+    fontFamily: 'Comfortaa_300Light',
+    color: mainTheme.danger,
+    fontSize: 12,
+    borderWidth: 1,
+    borderRadius: 6,
+    borderColor: mainTheme.danger,
+    padding: 10,
+    marginHorizontal: 5,
+    marginVertical: 10
   }
 })
 

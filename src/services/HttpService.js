@@ -5,10 +5,11 @@ export const makeRequest = async (
   endpoint, 
   requestBody = null, 
   params = null, 
-  query = null) => {
+  query = null
+) => {
 
   try {
-
+    
     // Retrieves the information about the request
     const requestInfo = ENDPOINTS[endpoint];
 
@@ -19,8 +20,10 @@ export const makeRequest = async (
     let url = requestInfo.url;
 
     // If there's params, add to the url
-    if (requestInfo.params) {
-      url = `${url}/${params}`;
+    if (requestInfo.params && requestInfo.params.length) {
+      for (const value of requestInfo.params) {
+        url = url.replace(`@${value}`, params[value]);
+      }
     }
 
     // Sets custom headers
@@ -38,9 +41,8 @@ export const makeRequest = async (
     // Sets query params
     if (requestInfo.query) {
       let i = 0;
-      const numberOfKeys = Object.keys(requestInfo.query).length;
       for (const key in requestInfo.query) {
-        if ((query[key] !== null && query[key] !== undefined) || 
+        if ((query?.[key] !== null && query?.[key] !== undefined) || 
         (requestInfo.query[key] !== null)) {
           if (i === 0) {
             url = `${url}?`;
@@ -48,7 +50,7 @@ export const makeRequest = async (
           if (i !== 0) {
             url = `${url}&`;
           }
-          url = `${url}${key}=${query[key] || requestInfo.query[key]}`;
+          url = `${url}${key}=${query?.[key] || requestInfo.query[key]}`;
         }
         i++;
       }
@@ -57,8 +59,6 @@ export const makeRequest = async (
     // Makes the request
     return await client(url, body, headers);
   } catch (err) {
-    console.log(JSON.stringify(err));
-    console.log(err.response);
     const status = err?.response?.status || 'Outro Status';
     const msg = err?.response?.data?.error_description ||
       err?.error || 

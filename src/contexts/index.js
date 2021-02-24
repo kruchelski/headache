@@ -1,3 +1,9 @@
 import { AuthContext, AuthProvider } from './AuthContext';
+import { DataContext, DataProvider } from './DataContext';
 
-export { AuthContext, AuthProvider };
+export { 
+  AuthContext, 
+  AuthProvider,
+  DataContext,
+  DataProvider
+};

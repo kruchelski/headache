@@ -20,5 +20,37 @@ export const ENDPOINTS = {
     params: null,
     query: null,
     headers: null
+  },
+
+  getAllProjects: {
+    url: `${apiPrefix}/projects`,
+    method: 'get',
+    body: null,
+    params: null,
+    query: {
+      simple: 'true',
+      statistics: 'true',
+      owned: 'true',
+      membership: 'true'
+    },
+    headers: null
+  },
+  
+  getCommits: {
+    url: `${apiPrefix}/projects/@projectId/repository/commits`,
+    method: 'get',
+    body: null,
+    params: ['projectId'],
+    query: null,
+    headers: null,
+  },
+
+  getGroups: {
+    url: `${apiPrefix}/groups`,
+    method: 'get',
+    body: null,
+    params: null,
+    query: null,
+    headers: null,
   }
 }

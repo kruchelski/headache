@@ -21,18 +21,17 @@ const CustomInput = (props) => {
     inputStyle={customStyle.input}
     labelStyle={customStyle.label[level]}
     inputContainerStyle={customStyle.container[level]}
-    placeholderTextColor={mainTheme.fgColor3}
+    placeholderTextColor={`${mainTheme.bgColor3}5e`}
     
 
   />
-
-
 }
 
 const customStyle = {
   input: {
-    color: mainTheme.fgColor0,
-    fontSize: 14
+    color: mainTheme.bgColor0,
+    fontSize: 14,
+    fontFamily: 'Comfortaa_400Regular'
   },
   label: {
     primary: {

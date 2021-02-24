@@ -2,29 +2,6 @@ import { StyleSheet } from 'react-native';
 import { mainTheme } from '../../constants';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1, 
-    alignItems: 'stretch',
-    justifyContent: 'flex-start',
-    backgroundColor: mainTheme.fgColor0,
-  },
-  heading:{
-    fontFamily: 'Comfortaa_600SemiBold',
-    fontSize: 20,
-    textAlign: 'left',
-    marginTop: 10,
-    marginHorizontal: 5,
-    color: mainTheme.primary,
-  },
-  subHeading: {
-    fontFamily: 'Comfortaa_600SemiBold',
-    fontSize: 18,
-    textAlign: 'right',
-    marginTop: 5,
-    marginBottom: 20,
-    marginHorizontal: 5,
-    color: mainTheme.secondary,
-  },
   contentContainer:{
     alignItems: 'stretch',
     marginBottom: 5,
@@ -74,17 +51,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginRight: 10
   },
-  error: {
-    fontFamily: 'Comfortaa_300Light',
-    color: mainTheme.danger,
-    fontSize: 12,
-    borderWidth: 1,
-    borderRadius: 6,
-    borderColor: mainTheme.danger,
-    padding: 10,
-    marginHorizontal: 5,
-    marginVertical: 10
-  }
 })
 
 export default styles;

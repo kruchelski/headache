@@ -23,15 +23,13 @@ const LoginScreen = ({ navigation }) => {
   }
 
   return (
+    
     <View style={styles.container}>
       <ImageBackground
         resizeMode='cover'
         source={bgLogin}
         style={styles.background}
-      >
-        <View style={styles.logoImageContainer}>
-          <Image source={logo} style={styles.logoImage} />
-        </View>
+      >        
         <View style={styles.formContainer}>
           <CustomInput
             level='primary'
@@ -71,6 +69,9 @@ const LoginScreen = ({ navigation }) => {
             level='primary'
             icon='login'
             onPress={() => { handleLogin() }} />
+        </View>
+        <View style={styles.logoImageContainer}>
+          <Image source={logo} style={styles.logoImage} />
         </View>
       </ImageBackground>
     </View>

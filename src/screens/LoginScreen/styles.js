@@ -9,12 +9,13 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     margin: 15,
+    marginTop: 10,
     padding: 15,
-    backgroundColor: `${mainTheme.bgColor3}ce`,
+    backgroundColor: `${mainTheme.fgColor0}8e`,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    
+    marginBottom: 30,
   },
   logoImageContainer: {
     alignItems: 'center',
@@ -25,7 +26,8 @@ const styles = StyleSheet.create({
 		height: 100,
 		resizeMode: 'cover',
     margin: 15,
-    marginBottom: 30
+    marginBottom: 3,
+    marginTop: 10
 	},
   background: { 
     flex: 1, 
