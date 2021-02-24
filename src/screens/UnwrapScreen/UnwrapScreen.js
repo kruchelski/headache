@@ -5,17 +5,18 @@ import styles from './styles'
 
 const UnwrapScreen = ({ navigation }) => {
   return (
-    <View style={ styles.container }>
+    <View style={styles.container}>
       <ImageBackground
         resizeMode='cover'
-        source={ bgUnwrap }
-        style={ styles.background }
+        source={bgUnwrap}
+        style={styles.background}
       >
-        <Text
-          style={ styles.text }
-        >
-          Unwrap Screen
-      </Text>
+        <View style={styles.overlay} />
+          <Text
+            style={styles.text}
+          >
+            Unwrap Screen
+          </Text>
       </ImageBackground>
     </View>
   );

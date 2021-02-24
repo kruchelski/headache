@@ -3,13 +3,25 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { HomeScreen, UnwrapScreen, RepoScreen } from '../screens';
 import { Sidebar } from '../components';
+import { mainTheme } from '../constants';
 
 const MainStack = createStackNavigator();
 const MainDrawer = createDrawerNavigator();
 
 const mainStack = () => {
 	return (
-		<MainStack.Navigator>
+		<MainStack.Navigator
+			screenOptions={{
+				headerTintColor: mainTheme.colorLight,
+				headerStyle: {
+					backgroundColor: mainTheme.fgColor0,
+				},
+				headerTitleStyle: {
+					fontFamily: 'Comfortaa_600SemiBold',
+					fontSize: 16
+				}
+			}}
+		>
 			<MainStack.Screen
 				name={'HomeScreen'}
 				component={HomeScreen}
@@ -30,7 +42,7 @@ const mainStack = () => {
 export default () => {
 	return (
 		<MainDrawer.Navigator
-			drawerContent={Sidebar}
+			drawerContent={(props) => <Sidebar {...props} />}
 		>
 			<MainDrawer.Screen
 				name={'Main'}

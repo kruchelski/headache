@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Image, Text, View, ActivityIndicator } from 'react-native';
 import { useAuth } from '../../hooks';
+import { mainTheme } from '../../constants';
+import { logo } from '../../assets';
 import styles from './styles';
 
 const SplashScreen = ({ setLoadingApp }) => {
@@ -32,10 +34,8 @@ const SplashScreen = ({ setLoadingApp }) => {
 
 	return (
 		<View style={ styles.container }>
-			<Text style={ styles.texdt }>
-        Headache
-      </Text>
-			<ActivityIndicator size="large" color={ '#333333' } />
+			<Image source={ logo } style={ styles.logoImage } />
+			<ActivityIndicator size="large" color={ mainTheme.primary } />
 			<Text style={ styles.text }>
 				{ welcomeMessage }
 			</Text>

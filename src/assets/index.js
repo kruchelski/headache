@@ -6,6 +6,7 @@ const bg05 = require('./images/bg05.gif');
 const bg06 = require('./images/bg06.gif');
 const bgUnwrap = require('./images/unwrap_start.gif');
 const bgLogin = require('./images/login.gif');
+const logo = require('./images/logo.png');
 
 
 export {
@@ -16,5 +17,6 @@ export {
   bg05,
   bg06,
   bgLogin,
-  bgUnwrap
+  bgUnwrap,
+  logo
 }

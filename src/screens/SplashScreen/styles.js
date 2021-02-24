@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { mainTheme } from '../../constants';
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fefefe',
+		backgroundColor: mainTheme.fgColor0,
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		padding: 10,
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
 		resizeMode: 'contain',
 	},
 	text: {
-		// color: mainTheme.fgColor0,
+		color: mainTheme.primaryDark,
 		fontSize: 16,
 		textAlign: 'center',
     fontFamily: 'Comfortaa_400Regular'

@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, ImageBackground } from 'react-native';
-import { Button } from 'react-native-elements';
+import { View, ImageBackground, Text } from 'react-native';
 import { bgLogin } from '../../assets';
 import { useAuth } from '../../hooks';
 import styles from './styles'
+import { CustomButton } from '../../components/common';
 
 const HomeScreen = ({ navigation }) => {
   const { authState, logout } = useAuth();
@@ -19,20 +19,34 @@ const HomeScreen = ({ navigation }) => {
         source={bgLogin}
         style={styles.background}
       >
-        <View style={{ backgroundColor: '#fefefe08' }} >
+        <Text
+          style={styles.text}
+        >
+          {`E aí ${authState.user.name.split(' ')[0]},`}
+        </Text>
 
-          <Text
-            style={styles.text}
-          >
-            Home Screen
-          </Text>
-          <Text>
-            Ola {authState.user.name || 'Pessoa desconhecida'}
-          </Text>
-          <Button 
+        <View
+          style={styles.buttonContainer}
+        >
+          <CustomButton
             type='solid'
-            buttonStyle={{ backgroundColor: 'orange' }}
-            title="Logout" onPress={() => handleLogout()} />
+            title="UNWRAP"
+            level='primary'
+            icon='gitlab'
+            onPress={() => { navigation.navigate('UnwrapScreen') }}
+          />
+        </View>
+
+        <View
+          style={styles.buttonContainer}
+        >
+          <CustomButton
+            type='outline'
+            title="Go to repos"
+            level='secondary'
+            icon='code-braces'
+            onPress={() => { navigation.navigate('RepoScreen') }}
+          />
         </View>
       </ImageBackground>
     </View>

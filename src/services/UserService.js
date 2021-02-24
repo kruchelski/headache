@@ -67,7 +67,8 @@ export const getUserInfoFromServer = async (username) => {
 		username: data.username,
 		name: data.name,
 		email: data.email,
-		url: data.web_url || null
+		url: data.web_url || null,
+		avatar: data.avatar_url || null,
 	}
 
 	return user;

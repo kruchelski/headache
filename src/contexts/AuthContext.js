@@ -15,7 +15,7 @@ const authContextApi = (authState, setAuthState) => {
       if (!storageToken || !storageUser) {
 
         try {
-          await signOut()
+          await logout()
 
         } catch (err) {
           throw err;
@@ -71,7 +71,6 @@ const authContextApi = (authState, setAuthState) => {
       })
 
     } catch (err) {
-
       throw err;
 
     }
