@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
     backgroundColor: `${mainTheme.bgColor3}ce`,
     borderRadius: 10,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    
   },
   logoImageContainer: {
     alignItems: 'center',
@@ -37,6 +38,17 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Comfortaa_400Regular',
     textAlign: 'center'
+  },
+  error: {
+    fontFamily: 'Comfortaa_300Light',
+    color: mainTheme.danger,
+    fontSize: 12,
+    borderWidth: 1,
+    borderRadius: 6,
+    borderColor: mainTheme.danger,
+    padding: 10,
+    marginHorizontal: 5,
+    marginBottom: 10
   }
 })
 

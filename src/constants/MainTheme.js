@@ -15,4 +15,5 @@ export const mainTheme = {
   fgColor3: '#888888',
   colorLight: '#EEEEEE',
   colorDark: '#333333',
+  danger: '#b0361a',
 }

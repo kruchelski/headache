@@ -57,8 +57,13 @@ export const makeRequest = async (
     // Makes the request
     return await client(url, body, headers);
   } catch (err) {
+    console.log(JSON.stringify(err));
+    console.log(err.response);
     const status = err?.response?.status || 'Outro Status';
-    const msg = err?.response?.data || err?.error || err?.message ||
+    const msg = err?.response?.data?.error_description ||
+      err?.error || 
+      err?.message ||
+      err?.response?.data?.error || 
       `Unexpected request error - ${endpoint}`;
 
     throw new Error(`[${status}] ${msg}`);

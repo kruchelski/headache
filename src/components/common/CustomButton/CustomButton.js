@@ -13,7 +13,7 @@ const CustomButton = (props) => {
     icon={ icon ?
       <Icon
         name={icon}
-        size={15}
+        size={18}
         style={{ marginRight: 5 }}
         color={customStyle.icon[buttonType][level]}
       /> :

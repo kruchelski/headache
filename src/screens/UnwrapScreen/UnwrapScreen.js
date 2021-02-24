@@ -29,8 +29,8 @@ const UnwrapScreen = ({ navigation }) => {
   }, [step])
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.container}
+    <View
+      style={styles.container}
     >
       <ImageBackground
         resizeMode='cover'
@@ -98,7 +98,7 @@ const UnwrapScreen = ({ navigation }) => {
         </View>
 
       </ImageBackground>
-    </ScrollView>
+    </View>
   );
 }
 

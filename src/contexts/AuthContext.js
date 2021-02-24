@@ -46,7 +46,11 @@ const authContextApi = (authState, setAuthState) => {
   const login = async (username, password) => {
 
     try {
-      
+      username = username.trim();
+      if (!username || username === '' || !password || password === '') {
+        throw new Error('Username and password must not be blank');
+      }
+
       // Gets the token
       const accessToken = await UserService.getAccessTokenFromServer(username, password);
 

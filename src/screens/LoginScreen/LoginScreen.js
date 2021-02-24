@@ -19,7 +19,7 @@ const LoginScreen = ({ navigation }) => {
     } catch (err) {
       setLoading(false);
       authErrorHandler(err, 'An unexpected error happened trying to Sign In');
-    } 
+    }
   }
 
   return (
@@ -54,6 +54,16 @@ const LoginScreen = ({ navigation }) => {
             secureTextEntry={true}
             onChangeText={(text) => setPassword(text)}
           />
+          {
+            !!authState.error &&
+            <View>
+              <Text
+                style={styles.error}
+              >
+                {authState.error}
+              </Text>
+            </View>
+          }
           <CustomButton
             loading={loading}
             type='solid'
@@ -61,17 +71,6 @@ const LoginScreen = ({ navigation }) => {
             level='primary'
             icon='login'
             onPress={() => { handleLogin() }} />
-          {
-            !!authState.error &&
-            <View>
-              <Text style={{ color: 'red' }}>
-                Ocorreu um erro
-						</Text>
-              <Text>
-                {authState.error}
-              </Text>
-            </View>
-          }
         </View>
       </ImageBackground>
     </View>
