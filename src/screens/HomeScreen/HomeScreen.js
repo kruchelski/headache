@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation }) => {
         <Text
           style={styles.text}
         >
-          {`E aí ${authState.user.name.split(' ')[0]},`}
+          {`What's up ${authState.user.name.split(' ')[0]},`}
         </Text>
 
         <View
@@ -42,7 +42,7 @@ const HomeScreen = ({ navigation }) => {
         >
           <CustomButton
             type='outline'
-            title="Go to repos"
+            title="Go to projects"
             level='secondary'
             icon='code-braces'
             onPress={() => { navigation.navigate('RepoScreen') }}

@@ -31,7 +31,65 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     width: windowWidth,
     height: windowHeight
-  }  
+  },
+  intro:{
+    fontFamily: 'Comfortaa_600SemiBold',
+    fontSize: 24,
+    textAlign: 'left',
+    marginTop: 10,
+    marginBottom: 15,
+    marginHorizontal: 5,
+    color: mainTheme.primary,
+  },
+  mid:{
+    fontFamily: 'Comfortaa_400Regular',
+    fontSize: 16,
+    textAlign: 'left',
+    marginTop: 5,
+    marginBottom: 5,
+    marginHorizontal: 5,
+    color: mainTheme.primaryLight,
+  },
+  contentContainer:{
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    marginBottom: 5,
+    padding: 10,
+    marginTop: 20,
+  },
+  contentItemContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginVertical: 15,
+    flexWrap: 'wrap'
+  },
+  contentItemIcon:{
+    flex: 1,
+    textAlign: 'center',
+    marginRight: 10
+  },
+  contentItemText: {
+    flex: 10,
+    fontFamily: 'Comfortaa_400Regular',
+    fontSize: 18,
+    color: mainTheme.primary,
+  },
+  final: {
+    fontFamily: 'Comfortaa_400Regular',
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 5,
+    marginBottom: 5,
+    marginHorizontal: 5,
+    color: mainTheme.secondaryLight,
+  },
+  buttonContainer: {
+    marginBottom: 5,
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 })
 
 export default styles;

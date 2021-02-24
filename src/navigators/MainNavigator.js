@@ -25,14 +25,17 @@ const mainStack = () => {
 			<MainStack.Screen
 				name={'HomeScreen'}
 				component={HomeScreen}
+				options={{ title: 'Headache' }}
 			/>
 			<MainStack.Screen
 				name={'RepoScreen'}
 				component={RepoScreen}
+				options={{ title: 'Projects' }}
 			/>
 			<MainStack.Screen
 				name={'UnwrapScreen'}
 				component={UnwrapScreen}
+				options={{ title: 'Unwrap' }}
 			/>
 		</MainStack.Navigator>
 
