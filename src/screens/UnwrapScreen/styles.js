@@ -6,15 +6,15 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1,
     alignItems: 'stretch',
     justifyContent: 'flex-start'
   },
-  background: { 
-    flex: 1, 
-    justifyContent: 'flex-start', 
-    width: '100%', 
-    height: '100%' 
+  background: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    width: '100%',
+    height: '100%'
   },
   text: {
     fontFamily: 'Comfortaa_400Regular',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight
   },
-  intro:{
+  intro: {
     fontFamily: 'Comfortaa_600SemiBold',
     fontSize: 24,
     textAlign: 'left',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     color: mainTheme.primary,
   },
-  mid:{
+  mid: {
     fontFamily: 'Comfortaa_400Regular',
     fontSize: 16,
     textAlign: 'left',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     color: mainTheme.primaryLight,
   },
-  contentContainer:{
+  contentContainer: {
     justifyContent: 'center',
     alignItems: 'stretch',
     marginBottom: 5,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     flexWrap: 'wrap'
   },
-  contentItemIcon:{
+  contentItemIcon: {
     flex: 1,
     textAlign: 'center',
     marginRight: 10

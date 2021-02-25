@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "gitlab",
-    "slug": "gitlab",
+    "name": "Headache",
+    "slug": "headache",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
